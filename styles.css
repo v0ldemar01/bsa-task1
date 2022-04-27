@@ -22,14 +22,14 @@ h4, h5 {
     flex-wrap: wrap;
 }
 
-.username-input {
+.сharacter-input {
     width: 70%;
     padding: 0.375rem 0.75rem;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
 }
 
-.btn-find-users {
+.btn-find-сharacters {
     cursor: pointer;
     padding: 0.375rem 0.75rem;
     color: #fff;
@@ -38,30 +38,30 @@ h4, h5 {
     border-radius: 0.25rem;
 }
 
-.user-container {
+.сharacter-container {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     margin-top: 25px;
 }
 
-.user-card {
+.сharacter-card {
     display: flex;
     flex-direction: column;
 }
 
-.user-avatar {
+.сharacter-avatar {
     width: 175px;
     height: 175px
 }
 
-.user-fullname {
+.сharacter-fullname {
     font-size: 17px;
     font-weight: 600;
     line-height: 30px;
 }
 
-.user-title {
+.сharacter-title {
     font-size: 14px;
     font-weight: 500;
     line-height: 15px;

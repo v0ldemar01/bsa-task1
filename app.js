@@ -1,23 +1,23 @@
-const findBtn = document.querySelector('.btn-find-users');
-const userContainer = document.querySelector('.user-container');
+const findBtn = document.querySelector('.btn-find-сharacters');
+const сharacterContainer = document.querySelector('.сharacter-container');
 
-const createUserNode = ({ fullName, title, imageUrl }) => {
+const createCharacterNode = ({ fullName, title, imageUrl }) => {
   const container = document.createElement('div');
-  container.classList.add('user-card');
+  container.classList.add('сharacter-card');
 
   const avatar = document.createElement('img');
-  avatar.classList.add('user-avatar');
+  avatar.classList.add('сharacter-avatar');
   avatar.setAttribute('src', imageUrl);
 
   const bodyContainer = document.createElement('div');
   bodyContainer.classList.add('card-body');
 
   const fullNameItem = document.createElement('h4');
-  fullNameItem.classList.add('user-fullname');
+  fullNameItem.classList.add('сharacter-fullname');
   fullNameItem.innerText = `${fullName},`;
 
   const titleItem = document.createElement('h5');
-  titleItem.classList.add('user-title');
+  titleItem.classList.add('сharacter-title');
   titleItem.innerText = title;
 
   bodyContainer.append(fullNameItem);
@@ -26,21 +26,21 @@ const createUserNode = ({ fullName, title, imageUrl }) => {
   return container;
 }
 
-const forwardRenderUsersByFilter = async () => {
-  userContainer.replaceChildren();
-  const userNodes = [];
-  const usernameInput = document.querySelector('.username-input');
-  const users = await getUsers(usernameInput.value);
-  for (const { fullName, imageUrl, title } of users) {
-    userNodes.push(createUserNode({ fullName, imageUrl, title }));
+const forwardRenderCharactersByFilter = async () => {
+  сharacterContainer.replaceChildren();
+  const сharacterNodes = [];
+  const сharacterNameInput = document.querySelector('.сharacter-input');
+  const сharacters = await getCharacters(сharacterNameInput.value);
+  for (const { fullName, imageUrl, title } of сharacters) {
+    сharacterNodes.push(createCharacterNode({ fullName, imageUrl, title }));
   }
-  userContainer.append(...userNodes);
+  сharacterContainer.append(...сharacterNodes);
 }
 
-findBtn.addEventListener('click', forwardRenderUsersByFilter);
+findBtn.addEventListener('click', forwardRenderCharactersByFilter);
 
-const getUsers = (usernameInput = '') => {
+const getCharacters  = (сharacterNameInput = '') => {
   // todo: implement this method
-  // endpoint - `https://my-got-api.herokuapp.com/${usernameInput}`;
+  // endpoint - `https://my-got-api.herokuapp.com/${сharacterNameInput}`;
   return [];
 }
