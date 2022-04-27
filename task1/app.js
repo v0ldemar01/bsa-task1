@@ -1,27 +1,23 @@
 const findBtn = document.querySelector('.btn-find-users');
 const userContainer = document.querySelector('.user-container');
 
-const createElement = ({ tagName = 'div', className, attributes = {} }) => {
-  const element = document.createElement(tagName);
-  if (className) {
-    const classNames = className.split(' ').filter(Boolean);
-    element.classList.add(...classNames);
-  }
-  Object.keys(attributes).forEach((key) => element.setAttribute(key, attributes[key]));
-  return element;
-}
-
 const createUserNode = ({ fullName, title, imageUrl }) => {
-  const container = createElement({ className: 'user-card' })
-  const avatar = createElement({ 
-    tagName: 'img', 
-    className: 'user-avatar', 
-    attributes: { src: imageUrl }
-  });
-  const bodyContainer = createElement({ className: 'card-body' });
-  const fullNameItem = createElement({ tagName: 'h4', className: 'user-fullname' });
+  const container = document.createElement('div');
+  container.classList.add('user-card');
+
+  const avatar = document.createElement('img');
+  avatar.classList.add('user-avatar');
+  avatar.setAttribute('src', imageUrl);
+
+  const bodyContainer = document.createElement('div');
+  bodyContainer.classList.add('card-body');
+
+  const fullNameItem = document.createElement('h4');
+  fullNameItem.classList.add('user-fullname');
   fullNameItem.innerText = `${fullName},`;
-  const titleItem = createElement({ tagName: 'h5', className: 'user-title' });
+
+  const titleItem = document.createElement('h5');
+  titleItem.classList.add('user-title');
   titleItem.innerText = title;
 
   bodyContainer.append(fullNameItem);
